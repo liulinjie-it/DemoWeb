@@ -1,0 +1,12 @@
+//在当前文件夹创建git本地仓库
+git init
+//把文件夹里的文件加入git本地仓库
+git add .  
+//查询当前仓库的提交状态。
+git status
+//提交到本地 双引号里的为提交注释
+git commit -m "first commit"
+//关联github仓库上
+git remote add origin https://自己的仓库url地址（上面有说到） 将本地的仓库关联到github上。
+//上传到github仓库的意思。
+git push -u origin master

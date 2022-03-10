@@ -1,0 +1,36 @@
+
+//在var/lib/docker/containers/下查看容器
+cd /var/lib/docker/containers/
+
+//查看 docker进程
+docker ps -a
+
+//运行mysql命令
+docker run --name mysqlserver -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 mysql:latest
+
+//进入镜像里操作
+docker exec -it mysqlserver bash
+
+//开启mysql 远程访问权限
+use mysql;
+
+select host,user from user;
+
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+
+flush privileges;
+
+//查看docker日志
+docker logs -f --tail 10 a4dac74d48f7
+
+//关闭docker中mysql容器
+docker stop mysqlserver
+
+//重启docker
+systemctl restart docke
+
+//关闭docker
+systemctl stop docker
+
+//退出当前镜像
+exit
