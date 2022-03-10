@@ -12,7 +12,7 @@ public class HelloController {
     @RequestMapping("/test")
     public String test(){
         String str = "333测试接口成13331功";
-        List<String> stringList = new ArrayList<>();
-            return str;
+        List<String> stringLis11t = new ArrayList<>();
+        return str;
     }
 }
